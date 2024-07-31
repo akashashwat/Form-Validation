@@ -96,7 +96,7 @@ function submitForm() {
     formData.appendChild(newEntry);
 
     document.getElementById('registration-form').reset();
-    document.getElementById('formEntries').style.display = 'block';
+    document.getElementById('DataMap').style.display = 'block';
 
     successForm();
 }

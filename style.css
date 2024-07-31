@@ -477,7 +477,7 @@ input::-webkit-input-placeholder {
     transition: all .2s ease;
 }
 
-.formEntries {
+.DataMap {
     padding: 60px 0;
     display: none;
 }
