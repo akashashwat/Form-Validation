@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
+        integrity="sha512-ZnR2wlLbSbr8/c9AgLg3jQPAattCUImNsae6NHYnS9KrIwRdcY9DxFotXhNAKIKbAXlRnujIqUWoXXwqyFOeIQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Pheonix Infratech</title>
+</head>
+
+<body>
+
+    <main class="homePage">
+        <header class="header">
+            <div class="container">
+                <div class="headWrap">
+
+                    <img src="logo.png" alt="">
+
+                    <ul class="links">
+                        <li> <a href="javascript:void(0)" class="active">Home</a></li>
+                        <li> <a href="javascript:void(0)">About</a></li>
+                        <li> <a href="javascript:void(0)">Services</a></li>
+                        <li> <a href="javascript:void(0)">Blog</a></li>
+                        <li> <a href="javascript:void(0)">Contact Us</a></li>
+                    </ul>
+
+                    <div class="joinNow">
+                        <a class="joinBtn" href="javascript:void(0)" onclick="showForm()">Register Now</a>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+        <section class="home">
+            <div class="container">
+
+                <div class="homeWrapper">
+
+                    <div class="leftContent">
+
+                        <h1 class="title">Excellent IT <br> <span class="highLight">
+                                Solutions
+                            </span> For Your Success</h1>
+
+                        <p class="subtitle">We collaborate with you to create new value through digital transformation.
+                            We're one company who do managed IT services and software development.
+
+                        </p>
+
+                        <button class="registerBtn" onclick="showForm()">Register Now</button>
+
+                    </div>
+
+                    <div class="rightContent">
+                        <img id="magicVector" class="itsVector" src="/site-vector.png" alt="">
+
+                        <div id="magicForm" class="magicForm">
+
+                            <div id="formWrapper" class="formWrapper">
+                                <div class="formHeading">
+                                    <h1>Registration Form</h1>
+                                </div>
+
+                                <div class="formWrap">
+                                    <form name="registration-form" class="form" id="registration-form">
+                                        <div class="formInput">
+                                            <label for="">Name <span class="redAlert">*</span></label>
+                                            <input type="text" name="" id="name" placeholder="Enter your name"
+                                                onblur='validateName(this)'>
+                                            <div id="name-error" class="errorMessg">
+                                                <span class="error redAlert">Please enter a valid name</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="formInput">
+                                            <label for="">Email <span class="redAlert">*</span></label>
+                                            <input type="email" name="" id="email" placeholder="Enter your email"
+                                                onblur='validateEmail(this)'>
+                                            <div id="email-error" class="errorMessg">
+                                                <span class="error redAlert">Please enter a valid email</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="formInput">
+                                            <label for="">Phone <span class="redAlert">*</span></label>
+                                            <input type="text" name="" id="phone" placeholder="Enter your phone"
+                                                maxlength="10" onblur="validatePhone(this)">
+                                            <div id="phone-error" class="errorMessg">
+                                                <span class="error redAlert">Please enter a valid number</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="formInput">
+                                            <label for="">Job Role <span class="redAlert">*</span></label>
+                                            <select name="job-role" id="role" onblur="validateRole(this)">
+                                                <option value="" disabled selected>Select your job role</option>
+                                                <option value="Front-end Developer">Front-end Developer</option>
+                                                <option value="Full Stack Developer">Full Stack Developer</option>
+                                                <option value="Graphic Designer">Graphic Designer</option>
+                                                <option value="Motion U.I">Motion U.I</option>
+                                            </select>
+                                            <div id="role-error" class="errorMessg">
+                                                <span class="error redAlert">Please enter a valid role</span>
+                                            </div>
+                                        </div>
+
+                                    </form>
+
+                                    <div class="btnWrapper">
+                                        <button role="submit" class="submitBtn"
+                                        id="submitBtn" 
+                                        onclick="handleFakeLoad()">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="successContainer" class="successContainer">
+
+                                <div class="successWrapper">
+                                    <div class="success-img">
+                                        <div class="img-Bg">
+                                            <img src="/success.png" alt="success-img">
+                                        </div>
+                                    </div>
+
+                                    <div class="thankYou">
+                                        <h2>Thank You</h2>
+                                        <p>Your Registration Is Complete</p>
+
+                                        <div class="backToForm">
+                                            <span>&larr;</span> <a href="javascript:void(0)" role="button"
+                                                onclick="backToForm()">Back to
+                                                form</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="DataMap">
+            <div class="container">
+
+                <div class="formEntries" id="formEntries">
+                    <h2>Form Data</h2>
+
+                    <table>
+                        <thead>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Job Role</th>
+                        </thead>
+
+                        <tbody id="formData">
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

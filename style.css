@@ -1,0 +1,520 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+
+:root {
+    --primaryRed: #ff3131;
+    --primaryText: #111111;
+    --secondaryText: #585858;
+    --white: #fff;
+    --greyBorder: #ddd;
+    --background-color: #fff;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Ubuntu", sans-serif;
+    background-color: var(--background-color);
+    color: var(--primaryText);
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+
+button {
+    background-color: var(--primaryRed);
+    color: var(--white);
+}
+
+.container {
+    width: 100%;
+    max-width: 100%;
+    padding-inline: 1rem;
+    margin: 0 auto;
+
+    @media (min-width: 768px) {
+        max-width: 720px;
+    }
+
+    @media (min-width: 992px) {
+        max-width: 960px;
+    }
+
+    @media (min-width: 1200px) {
+        max-width: 1280px;
+    }
+
+}
+
+a {
+    text-decoration: none;
+    color: var(--primaryText);
+}
+
+.homePage {
+    min-height: 100vh;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background: var(--white);
+    border-bottom: .5px solid var(--greyBorder);
+    z-index: 999;
+}
+
+.headWrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.headWrap img {
+    cursor: pointer;
+}
+
+.links {
+    display: flex;
+    gap: 20px;
+}
+
+.links li {
+    list-style: none;
+}
+
+.links li:hover a {
+    color: var(--primaryRed);
+    transition: .2s ease;
+}
+
+.links li a {
+    padding: 0 15px;
+    font-size: 17px;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.active {
+    color: var(--primaryRed);
+}
+
+.joinNow {
+    display: flex;
+    gap: 10px;
+}
+
+.joinBtn {
+    width: 100%;
+    padding: 12px 35px;
+    border: 2px solid var(--primaryRed);
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 18px;
+    border-radius: 42px;
+    font-weight: 600;
+    transition: .3s;
+    z-index: 1;
+    font-family: inherit;
+    color: var(--primaryText);
+    cursor: pointer;
+}
+
+.joinBtn::before {
+    content: '';
+    width: 0;
+    height: 300%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--primaryRed);
+    transition: .3s ease;
+    display: block;
+    z-index: -1;
+}
+
+.joinBtn:hover::before {
+    width: 105%;
+}
+
+.joinBtn:hover {
+    color: #f8efef;
+}
+
+.home {
+    background: url("/siteBg.png") no-repeat;
+    background-size: cover;
+    padding: 80px 0;
+}
+
+.darkTheme {
+    background: var(--background-color);
+}
+
+.homeWrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 120px;
+    align-items: center;
+}
+
+.leftContent {
+    width: 100%;
+    max-width: 680px;
+}
+
+.leftContent h1 {
+    font-size: 48px;
+    width: 430px;
+    color: var(--primaryText);
+}
+
+.highLight {
+    color: var(--primaryRed);
+}
+
+.leftContent p {
+    font-size: 18px;
+    margin-top: 15px;
+    width: 100%;
+    max-width: 500px;
+    line-height: 180%;
+    color: var(--secondaryText);
+    font-weight: 500;
+}
+
+.registerBtn {
+    max-width: 240px;
+    padding: 10px 15px;
+    margin-top: 20px;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    background: var(--primaryRed);
+    color: #fff;
+    border: 1px solid var(--primaryRed);
+    position: relative;
+    overflow: hidden;
+    transition: .3s;
+    z-index: 1;
+    font-family: inherit;
+    color: #fff;
+    cursor: pointer;
+}
+
+.registerBtn::before {
+    content: '';
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    transition: .3s ease;
+    display: block;
+    z-index: -1;
+}
+
+.registerBtn:hover::before {
+    width: 100%;
+}
+
+.registerBtn:hover {
+    color: var(--primaryText);
+}
+
+.rightContent {
+    width: 100%;
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.itsVector {
+    width: 567px;
+    position: relative;
+    display: block;
+}
+
+.formWrapper {
+    border: 1px solid var(--greyBorder);
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    padding-bottom: 30px;
+    background: var(--white);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    @media screen and (max-width:767px) {
+        margin: 5px;
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.formHeading {
+    padding: 15px 0;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.formHeading h1 {
+    color: var(--primaryRed);
+    font-size: 30px;
+}
+
+.formWrap {
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.formInput {
+    display: flex;
+    flex-direction: column;
+    min-height: 90px;
+}
+
+.formInput label {
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: var(--primaryText);
+}
+
+.formInput input {
+    height: 40px;
+    outline: none;
+    border-radius: 5px;
+    border: .5px solid var(--greyBorder);
+    padding-left: 10px;
+    font-family: "Ubuntu", sans-serif;
+}
+
+.formInput select {
+    height: 40px;
+    outline: none;
+    border: .5px solid var(--greyBorder);
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.error {
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+.redAlert {
+    color: var(--primaryRed);
+}
+
+input::-webkit-input-placeholder {
+    font-family: "Ubuntu", sans-serif;
+}
+
+.errorMessg {
+    visibility: hidden;
+    display: block;
+}
+
+.btnWrapper {
+    margin-top: 18px;
+}
+
+.submitBtn {
+    width: 100%;
+    padding: 12px 35px;
+    border: 2px solid var(--primaryRed);
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 18px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: .3s;
+    z-index: 1;
+    font-family: inherit;
+    color: var(--primaryText);
+    cursor: pointer;
+}
+
+.submitBtn::before {
+    content: '';
+    width: 0;
+    height: 300%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--primaryRed);
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+}
+
+.submitBtn:hover::before {
+    width: 105%;
+}
+
+.submitBtn:hover {
+    color: #f8efef;
+}
+
+.magicForm {
+    width: 100%;
+    position: absolute;
+    min-height: 567px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.fadeIn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeIn {
+
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+}
+
+.successContainer {
+    border: 1px solid var(--greyBorder);
+    border-radius: 12px;
+    padding: 15px;
+    display: none;
+}
+
+.successWrapper {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-radius: 5px;
+    text-align: center;
+
+}
+
+.img-Bg {
+    border-radius: 8%;
+    background: #282727;
+}
+
+.img-Bg img {
+    width: 75px;
+}
+
+.thankYou h2 {
+    color: var(--primaryText);
+}
+
+.thankYou p {
+    padding: 5px 0;
+    font-size: 15px;
+    color: var(--secondaryText);
+}
+
+.backToForm {
+    color: var(--primaryText);
+}
+
+.thankYou a {
+    font-size: 14px;
+    color: var(--primaryText);
+    position: relative;
+}
+
+.thankYou a:hover {
+    color: var(--primaryText);
+    transition: all .2s ease;
+}
+
+.formEntries {
+    padding: 60px 0;
+    display: none;
+}
+
+.formEntries h2 {
+    font-size: 34px;
+}
+
+table {
+    margin-top: 40px;
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid rgb(204, 204, 204, 0.5);
+    background: var(--white);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+thead {
+    height: 50px;
+    color: var(--primaryRed);
+}
+
+th {
+    border-right: 1px solid rgb(204, 204, 204, 0.5);
+    font-size: 18px;
+}
+
+td {
+    text-align: center;
+    padding: 12px;
+    color: #222;
+    font-family: "Ubuntu", sans-serif;
+    font-style: normal;
+    border: 1px solid rgb(204, 204, 204, 0.5);
+    line-height: 120%;
+}
+
+td:not(:last-child) {
+    min-width: 100px;
+}
