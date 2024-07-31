@@ -154,7 +154,7 @@ header {
 }
 
 .home {
-    background: url("/siteBg.png") no-repeat;
+    background: url("/siteBg.webp") no-repeat;
     background-size: cover;
     padding: 80px 0;
 }
